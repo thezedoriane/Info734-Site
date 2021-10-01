@@ -6,7 +6,7 @@ var ProductSchema = new Schema({
   name : String,
   description : String,
   price : Float32Array,
-  categoryId : {type:Mongoose.Schema.Types.Object_id,ref:"Category"},
+  categoryId : {type:mongoose.Schema.Types.Object_id,ref:"Category"},
   done : {
     type : Boolean,
     default : false
