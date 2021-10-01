@@ -73,7 +73,7 @@ const connectDb = async () => {
 const todoRoutes = require('./routes/todo');
 
 //Acces the routes 
-app.use('/api/v1/', todoRoutes);
+app.use(todoRoutes);
 
 //When there is no route that caught the incoming request
 //use the 404 middleware
