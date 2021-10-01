@@ -79,8 +79,6 @@ router.put("/todoP/:id", (req, res) => {
 
 });
 
-
-
 //DELETE
 router.delete("/todoS/:id", (req, res) => {
     
