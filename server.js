@@ -24,6 +24,9 @@ const {loggers, transports, format} = require("winston");
 //Accessing MongoDB
 const mongoose = require('mongoose');
 
+//Accessing Schema
+//const schema = require('schema');
+
 //Create an application 
 const app = express();
 
@@ -66,12 +69,17 @@ const connectDb = async () => {
   
   connectDb().catch(error => console.error(error))
 
+//Accessing the routes for the user
+const todoRoutes = require('./routes/todo');
+
+//Acces the routes 
+app.use('/api/v1/', todoRoutes);
 
 //When there is no route that caught the incoming request
 //use the 404 middleware
 app.use(http404.notFound);
 
-//Listen on the port 3000
+//Listen on the port 3001
 app.listen(3001, () => {
     //Add info to the loggers
     infoLogger.info('Server is running on port: 3001');
