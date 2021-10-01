@@ -24,9 +24,6 @@ const {loggers, transports, format} = require("winston");
 //Accessing MongoDB
 const mongoose = require('mongoose');
 
-//Accessing Schema
-const mongoose = require('schema');
-
 //Create an application 
 const app = express();
 
