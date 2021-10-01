@@ -78,3 +78,63 @@ router.put("/todoP/:id", (req, res) => {
     controller.updateS(req, res);
 
 });
+
+
+
+//DELETE
+router.delete("/todoS/:id", (req, res) => {
+    
+    controller.deleteS(req, res);
+
+});
+
+router.delete("/todoC/:id", (req, res) => {
+    
+    controller.deleteC(req, res);
+
+});
+
+router.delete("/todoP/:id", (req, res) => {
+    
+    controller.deleteP(req, res);
+
+});
+
+//COMPLETED
+router.post("/todoS/:id/done", (req, res) => {
+
+    controller.done(req, res);
+
+});
+
+router.post("/todoS/:id/undone", (req, res) => {
+
+    controller.undone(req, res);
+
+});
+
+router.post("/todoC/:id/done", (req, res) => {
+
+    controller.done(req, res);
+
+});
+
+router.post("/todoC/:id/undone", (req, res) => {
+
+    controller.undone(req, res);
+
+});
+
+router.post("/todoP/:id/done", (req, res) => {
+
+    controller.done(req, res);
+
+});
+
+router.post("/todoP/:id/undone", (req, res) => {
+
+    controller.undone(req, res);
+
+});
+
+module.exports = router;
