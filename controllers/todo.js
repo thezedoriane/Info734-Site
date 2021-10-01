@@ -1,7 +1,7 @@
 const { Mongoose } = require("mongoose");
 
 function createShop(req, res) {
-    let Shop = require("../models/todo");
+    let Shop = require("../models/todoS");
     let newShop = Shop ({
         title: req.body.title,
         description : req.body.description
@@ -20,7 +20,7 @@ function createShop(req, res) {
 }
 
 function createCategory(req, res) {
-    let Category = require("../models/todo");
+    let Category = require("../models/todoC");
     let newCategory = Category ({
         name: req.body.title,
         description : req.body.description,
@@ -40,7 +40,7 @@ function createCategory(req, res) {
 }
 
 function createProduct(req, res) {
-    let Product = require("../models/todo");
+    let Product = require("../models/todoP");
     let newProduct = Product ({
         name: req.body.title,
         description : req.body.description,
