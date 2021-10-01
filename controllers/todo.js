@@ -61,7 +61,7 @@ function createProduct(req, res) {
 }
 
 function readShops(req, res) {
-    let Shop = require("../models/todo");
+    let Shop = require("../models/todoS");
     Shop.find({})
     .then((shops) => {
         res.status(200).json(shops);
@@ -71,7 +71,7 @@ function readShops(req, res) {
  }
 
 function readShop(req, res) {
-    let Shop = require("../models/todo");
+    let Shop = require("../models/todoS");
     Shop.findById({_id : req.params.id})
     .then((shop) => {
         res.status(200).json(shop);
@@ -81,7 +81,7 @@ function readShop(req, res) {
  }
 
  function readCategories(req, res) {
-    let Category = require("../models/todo");
+    let Category = require("../models/todoC");
     Category.find({})
     .then((categories) => {
         res.status(200).json(categories);
@@ -91,7 +91,7 @@ function readShop(req, res) {
  }
 
 function readCategory(req, res) {
-    let Category = require("../models/todo");
+    let Category = require("../models/todoC");
     Category.findById({_id : req.params.id})
     .then((category) => {
         res.status(200).json(category);
@@ -101,7 +101,7 @@ function readCategory(req, res) {
  }
 
  function readProducts(req, res) {
-    let Product = require("../models/todo");
+    let Product = require("../models/todoP");
     Product.find({})
     .then((products) => {
         res.status(200).json(products);
@@ -111,7 +111,7 @@ function readCategory(req, res) {
  }
 
 function readProduct(req, res) {
-    let Product = require("../models/todo");
+    let Product = require("../models/todoP");
     Product.findById({_id : req.params.id})
     .then((product) => {
         res.status(200).json(product);
@@ -121,7 +121,7 @@ function readProduct(req, res) {
  }
 
 function updateShop(req, res) {
-    let Shop = require("../models/todo");
+    let Shop = require("../models/todoS");
     Shop.findByIdAndUpdate({_id: req.params.id}, 
         {title : req.body.title, 
         description : req.body.description}, 
@@ -134,7 +134,7 @@ function updateShop(req, res) {
 }
 
 function updateCategory(req, res) {
-    let Category = require("../models/todo");
+    let Category = require("../models/todoC");
     Category.findByIdAndUpdate({_id: req.params.id}, 
         {title : req.body.title, 
         description : req.body.description,
@@ -148,7 +148,7 @@ function updateCategory(req, res) {
 }
 
 function updateProduct(req, res) {
-    let Product = require("../models/todo");
+    let Product = require("../models/todoP");
     Product.findByIdAndUpdate({_id: req.params.id}, 
         {title : req.body.title, 
         description : req.body.description, 
@@ -164,7 +164,7 @@ function updateProduct(req, res) {
 
 function deleteShop(req, res) {
 
-    let Shop = require("../models/todo");
+    let Shop = require("../models/todoS");
 
     Shop.findOneAndRemove({_id : req.params.id})
     .then((deletedShop) => {
@@ -176,7 +176,7 @@ function deleteShop(req, res) {
 
  function deleteCategory(req, res) {
 
-    let Category = require("../models/todo");
+    let Category = require("../models/todoC");
 
     Category.findOneAndRemove({_id : req.params.id})
     .then((deletedCategory) => {
@@ -188,7 +188,7 @@ function deleteShop(req, res) {
 
  function deleteProduct(req, res) {
 
-    let Product = require("../models/todo");
+    let Product = require("../models/todoP");
 
     Product.findOneAndRemove({_id : req.params.id})
     .then((deletedProduct) => {
