@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var ProductSchema = new Schema({
   name : String,
   description : String,
-  price : Float32Array,
+  price : Number,
   categoryId : {type:mongoose.Schema.Types.ObjectId,ref:"Category"},
   done : {
     type : Boolean,
