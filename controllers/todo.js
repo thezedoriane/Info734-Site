@@ -3,7 +3,7 @@ const { Mongoose } = require("mongoose");
 function createShop(req, res) {
     let Shop = require("../models/todoS");
     let newShop = Shop ({
-        title: req.body.title,
+        name: req.body.name,
         description : req.body.description
     });
   
@@ -22,7 +22,7 @@ function createShop(req, res) {
 function createCategory(req, res) {
     let Category = require("../models/todoC");
     let newCategory = Category ({
-        name: req.body.title,
+        name: req.body.name,
         description : req.body.description,
         shopId:req.body.shopId
     });
@@ -42,7 +42,7 @@ function createCategory(req, res) {
 function createProduct(req, res) {
     let Product = require("../models/todoP");
     let newProduct = Product ({
-        name: req.body.title,
+        name: req.body.name,
         description : req.body.description,
         price : req.body.price,
         categoryId:req.body.categoryId
@@ -123,7 +123,7 @@ function readProduct(req, res) {
 function updateShop(req, res) {
     let Shop = require("../models/todoS");
     Shop.findByIdAndUpdate({_id: req.params.id}, 
-        {title : req.body.title, 
+        {name : req.body.name, 
         description : req.body.description}, 
         {new : true})
     .then((updatedShop) => {
@@ -136,7 +136,7 @@ function updateShop(req, res) {
 function updateCategory(req, res) {
     let Category = require("../models/todoC");
     Category.findByIdAndUpdate({_id: req.params.id}, 
-        {title : req.body.title, 
+        {name : req.body.name, 
         description : req.body.description,
         shopId : req.body.shopId},
         {new : true})
@@ -150,7 +150,7 @@ function updateCategory(req, res) {
 function updateProduct(req, res) {
     let Product = require("../models/todoP");
     Product.findByIdAndUpdate({_id: req.params.id}, 
-        {title : req.body.title, 
+        {name : req.body.name, 
         description : req.body.description, 
         price : req.body.price,
         categoryId:req.body.category},
